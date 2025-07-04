@@ -13,7 +13,7 @@ function Scene() {
     const { isAngleAnimating, needsRecenter } = state;
     const controlsRef = useRef<CameraControls>(null!);
     const lineRef = useRef<THREE.LineSegments>(null!);
-    const { scene } = useThree();
+    const { scene, gl } = useThree();
 
     useFrame((_, delta) => {
         TWEEN.update();
@@ -73,15 +73,14 @@ function Scene() {
 
     useEffect(() => {
         const handleExport = () => {
-            const renderer = useThree.getState().gl;
-            link.href = renderer.domElement.toDataURL('image/png');
+            link.href = gl.domElement.toDataURL('image/png');
             link.click();
         };
         const link = document.createElement('a');
         link.download = 'l-system.png';
         document.addEventListener('export-png', handleExport);
         return () => document.removeEventListener('export-png', handleExport);
-    }, []);
+    }, [gl]);
     
     useEffect(() => {
         const controls = controlsRef.current;

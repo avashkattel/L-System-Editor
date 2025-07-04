@@ -14,6 +14,7 @@
       "@emotion/styled": "^11.11.5",
       "@react-three/drei": "^9.105.6",
       "@react-three/fiber": "^8.16.6",
+      "@tweenjs/tween.js": "^21.0.0",
       "framer-motion": "^11.2.6",
       "pako": "^2.1.0",
       "react": "^18.2.0",

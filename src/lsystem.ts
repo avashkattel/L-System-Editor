@@ -142,4 +142,4 @@ function generateSVG(segments: Segment[], colors: string[], solidColor: string, 
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" width="1000" height="1000" style="background-color: #1a1a1d;">${pathElements}</svg>`;
 }
 
-export { presets, gradientPresets, generateLSystemString, getSegments, getGradientColor, RuleSet, generateSVG };
+export { presets, gradientPresets, generateLSystemString, getSegments, getGradientColor, generateSVG };
