@@ -30,7 +30,7 @@ const presets = {
     "Krishna Anklet": { axiom: "-X--X", rules: { X: "XFX--XFX" }, angle: 45, iterations: 6, startAngle: 90 },
     "Board": { axiom: "F+F+F+F", rules: { F: "FF+F+F+F+FF" }, angle: 90, iterations: 4, startAngle: 90 },
     "Tiles": { axiom: "F+F+F+F", rules: { F: "F+F-F+F+F" }, angle: 90, iterations: 4, startAngle: 90 },
-    "Rings": { axiom: "F+F+F+F", rules: { F: "FF+F+F+F+F+F-F" }, angle: 90, iterations: 3, startAngle: 90 },
+    "Concentric Rings": { axiom: "F+F+F+F", rules: { F: "FF+F+F+F+F+F-F" }, angle: 90, iterations: 3, startAngle: 90 },
     "Spiral Square": { axiom: "F+F+F+F", rules: { F: "F+F-F-F+F" }, angle: 90, iterations: 5, startAngle: 90 }
 };
 

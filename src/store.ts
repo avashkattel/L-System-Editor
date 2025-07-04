@@ -35,10 +35,12 @@ interface LSystemState {
     hydrateFromUrl: (data: Partial<LSystemState>) => void;
 }
 
-const initialPreset = presets['Fractal Tree'];
+const initialPresetName = "Arsa Tree";
+const initialGradientName = "Lavender Field";
+const initialPreset = presets[initialPresetName];
 
 export const useStore = create<LSystemState>((set, get) => ({
-    preset: 'Fractal Tree',
+    preset: initialPresetName,
     axiom: initialPreset.axiom,
     rules: { ...initialPreset.rules },
     angle: initialPreset.angle,
@@ -46,8 +48,8 @@ export const useStore = create<LSystemState>((set, get) => ({
     iterations: initialPreset.iterations,
     useGradient: true,
     solidColor: '#61afef',
-    gradientPreset: 'Forest',
-    gradientColors: gradientPresets['Forest'],
+    gradientPreset: initialGradientName,
+    gradientColors: gradientPresets[initialGradientName],
     backgroundColor: '#1a1a1d',
     isAngleAnimating: false,
     needsRecenter: true,
@@ -83,7 +85,7 @@ export const useStore = create<LSystemState>((set, get) => ({
 
     setGradientPreset: (name) => set({
         gradientPreset: name,
-        gradientColors: gradientPresets[name] || [],
+        gradientColors: gradientPresets[name as keyof typeof gradientPresets] || [],
         useGradient: true,
     }),
 
